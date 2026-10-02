@@ -11,7 +11,7 @@ no build step), hosted free on **GitHub Pages** with the custom domain
 | `index.html`    | The home page (all main content) |
 | `404.html`      | Shown by GitHub Pages for any address that doesn't exist |
 | `css/style.css` | All styling; colours are variables at the top |
-| `favicon.svg`   | Shield logo used in the browser tab and header |
+| `favicon.svg`   | Shield mark used in the browser tab; page headers and footers use the Netsafe IT wordmark |
 | `CNAME`         | Tells GitHub Pages which custom domain to serve. **Don't delete.** |
 | `.nojekyll`     | Tells GitHub to publish files as-is (skip its Jekyll processor) |
 | `robots.txt`, `sitemap.xml` | Help search engines index the site |

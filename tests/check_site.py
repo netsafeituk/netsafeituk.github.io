@@ -33,6 +33,16 @@ EXPECTED_DOMAIN = "www.netsafeit.co.uk"
 REQUIRED_FILES = ["index.html", "404.html", "css/style.css", "CNAME"]
 EXPECTED_PHONE = "0330 236 9980"
 EXPECTED_EMAIL = "info@netsafeit.co.uk"
+BRANDING_REQUIREMENTS = (
+    'header class="site-header"',
+    'footer class="site-footer"',
+    'https://netsafeit.co.uk/privacy-policy#article-1',
+    'https://netsafeit.co.uk/cookie-policy',
+    'https://facebook.com/netsafeit.uk/',
+    'https://x.com/netsafeituk/',
+    'https://www.linkedin.com/company/netsafe-it-limited',
+    'new Date().getFullYear()',
+)
 
 # Collected failure messages; empty at the end means success
 failures = []
@@ -127,6 +137,7 @@ def check_page(relative_path):
 
     inspector = PageInspector()
     inspector.feed(page_source)
+    check_shared_branding(relative_path, page_source)
 
     if not inspector.html_lang:
         fail(f"{relative_path}: <html> has no lang attribute")
@@ -163,6 +174,14 @@ def check_business_details(home_page_source):
     for expected_text in (EXPECTED_PHONE, EXPECTED_EMAIL):
         if expected_text not in home_page_source:
             fail(f"index.html: expected to find '{expected_text}'")
+
+
+def check_shared_branding(relative_path, page_source):
+    for required_text in BRANDING_REQUIREMENTS:
+        if required_text not in page_source:
+            fail(f"{relative_path}: missing shared branding item '{required_text}'")
+    if page_source.count('alt="Netsafe IT logo"') < 2:
+        fail(f"{relative_path}: expected Netsafe IT logos in the header and footer")
 
 
 def check_no_secrets():
