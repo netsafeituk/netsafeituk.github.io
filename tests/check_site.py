@@ -9,7 +9,7 @@ Uses only the Python standard library, so nothing needs installing.
 Exits with code 0 if every check passes, 1 if any check fails.
 
 What is checked (the written test plan):
-  1. Required files exist (home page, 404 page, stylesheet, CNAME).
+  1. Required files exist (home, 404, privacy and cookie pages, stylesheet, CNAME).
   2. The CNAME file contains exactly the custom domain GitHub Pages must serve.
   3. Every HTML page has a <title>, a meta description, a viewport meta tag
      and a language attribute (basic SEO and accessibility).
@@ -31,14 +31,17 @@ from html.parser import HTMLParser
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 EXPECTED_DOMAIN = "www.netsafeit.co.uk"
-REQUIRED_FILES = ["index.html", "404.html", "css/style.css", "CNAME"]
+REQUIRED_FILES = [
+    "index.html", "404.html", "privacy-policy.html", "cookie-policy.html",
+    "css/style.css", "CNAME",
+]
 EXPECTED_PHONE = "0330 236 9980"
 EXPECTED_EMAIL = "info@netsafeit.co.uk"
 BRANDING_REQUIREMENTS = (
     'header class="site-header"',
     'footer class="site-footer"',
-    'https://netsafeit.co.uk/privacy-policy#article-1',
-    'https://netsafeit.co.uk/cookie-policy',
+    'href="/privacy-policy.html"',
+    'href="/cookie-policy.html"',
     'https://facebook.com/netsafeit.uk/',
     'https://x.com/netsafeituk/',
     'https://www.linkedin.com/company/netsafe-it-limited',

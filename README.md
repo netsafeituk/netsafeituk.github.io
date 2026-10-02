@@ -10,6 +10,7 @@ no build step), hosted free on **GitHub Pages** with the custom domain
 |-----------------|---------|
 | `index.html`    | The home page (all main content) |
 | `404.html`      | Shown by GitHub Pages for any address that doesn't exist |
+| `privacy-policy.html`, `cookie-policy.html` | Legal pages linked from every footer. Update the "Last updated" date when you change them |
 | `css/style.css` | All styling; colours are variables at the top |
 | `favicon.svg`   | Shield mark used in the browser tab; page headers and footers use the Netsafe IT wordmark |
 | `CNAME`         | Tells GitHub Pages which custom domain to serve. **Don't delete.** |

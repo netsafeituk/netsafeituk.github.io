@@ -349,6 +349,24 @@ img { max-width: 100%; height: auto; }
   text-align: center;
 }
 
+/* ----- Policy pages (privacy, cookies) ----- */
+
+.policy h1 { font-size: clamp(1.9rem, 4vw, 2.6rem); margin-bottom: 0.2em; }
+
+.policy h2 {
+  font-size: 1.3rem;
+  margin-top: 2em;
+}
+
+.policy-updated {
+  color: var(--colour-muted);
+  font-size: 0.95rem;
+  margin-bottom: 2em;
+}
+
+.policy ul { padding-left: 1.3em; margin: 0 0 1em; }
+.policy li { margin-bottom: 0.4em; }
+
 /* ----- Small screens (phones) ----- */
 
 @media (max-width: 640px) {
