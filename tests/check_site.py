@@ -19,6 +19,7 @@ What is checked (the written test plan):
   6. Every in-page anchor link (e.g. href="#services") has a matching id.
   7. Key business details (phone, email) appear on the home page.
   8. No obvious secrets (passwords, API keys) have been committed.
+  9. Nothing loads from soloist.ai, which is being shut down.
 """
 
 import os
@@ -138,6 +139,7 @@ def check_page(relative_path):
     inspector = PageInspector()
     inspector.feed(page_source)
     check_shared_branding(relative_path, page_source)
+    check_no_soloist_dependencies(relative_path, page_source)
 
     if not inspector.html_lang:
         fail(f"{relative_path}: <html> has no lang attribute")
@@ -182,6 +184,12 @@ def check_shared_branding(relative_path, page_source):
             fail(f"{relative_path}: missing shared branding item '{required_text}'")
     if page_source.count('alt="Netsafe IT logo"') < 2:
         fail(f"{relative_path}: expected Netsafe IT logos in the header and footer")
+
+
+def check_no_soloist_dependencies(relative_path, page_source):
+    """Soloist.ai is closing, so files loaded from its servers will vanish."""
+    if re.search(r"(src|href)=\"[^\"]*soloist\.ai", page_source):
+        fail(f"{relative_path}: loads a file from soloist.ai, which is shutting down")
 
 
 def check_no_secrets():
