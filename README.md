@@ -1,8 +1,8 @@
-# www.netsafeit.co.uk
+# netsafeituk.github.io
 
 Website for Netsafe IT Limited. A hand-written static site (plain HTML and CSS,
-no build step), hosted free on **GitHub Pages** with the custom domain
-`www.netsafeit.co.uk`.
+no build step), hosted free on **GitHub Pages** at
+`https://netsafeituk.github.io/`.
 
 ## Files
 
@@ -13,7 +13,6 @@ no build step), hosted free on **GitHub Pages** with the custom domain
 | `privacy-policy.html`, `cookie-policy.html` | Legal pages linked from every footer. Update the "Last updated" date when you change them |
 | `css/style.css` | All styling; colours are variables at the top |
 | `favicon.svg`   | Shield mark used in the browser tab; page headers and footers use the Netsafe IT wordmark |
-| `CNAME`         | Tells GitHub Pages which custom domain to serve. **Don't delete.** |
 | `.nojekyll`     | Tells GitHub to publish files as-is (skip its Jekyll processor) |
 | `robots.txt`, `sitemap.xml` | Help search engines index the site |
 | `tests/check_site.py` | Automated checks; run before every publish |
@@ -41,14 +40,12 @@ git commit -m "Describe the change"
 git push
 ```
 
-## DNS (at Fasthosts / LiveDomains)
+## Hosting
 
-| Type  | Host  | Value |
-|-------|-------|-------|
-| CNAME | `www` | `netsafeituk.github.io` |
-| A     | `@`   | `185.199.108.153` |
-| A     | `@`   | `185.199.109.153` |
-| A     | `@`   | `185.199.110.153` |
-| A     | `@`   | `185.199.111.153` |
+This repository is published directly from GitHub Pages at
+`https://netsafeituk.github.io/`.
 
-The `A` records make the bare `netsafeit.co.uk` redirect to `www.netsafeit.co.uk`.
+The old custom-domain redirect has been disabled, so the GitHub Pages URL is now
+used as the canonical site address. If a custom domain is ever added again, it
+should be configured in GitHub Pages and a matching `CNAME` file should be kept in
+this repository.

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.netsafeit.co.uk/sitemap.xml
+Sitemap: https://netsafeituk.github.io/sitemap.xml
