@@ -1,8 +1,7 @@
 # netsafeituk.github.io
 
 Website for Netsafe IT Limited. A hand-written static site (plain HTML and CSS,
-no build step), hosted free on **GitHub Pages** at
-`https://netsafeituk.github.io/`.
+no build step), hosted free on **GitHub Pages** at `https://netsafeit.co.uk/`.
 
 ## Files
 
@@ -43,9 +42,8 @@ git push
 ## Hosting
 
 This repository is published directly from GitHub Pages at
-`https://netsafeituk.github.io/`.
+`https://netsafeit.co.uk/`. The `www.netsafeit.co.uk` address redirects to the
+apex domain.
 
-The old custom-domain redirect has been disabled, so the GitHub Pages URL is now
-used as the canonical site address. If a custom domain is ever added again, it
-should be configured in GitHub Pages and a matching `CNAME` file should be kept in
-this repository.
+If the custom domain changes, update it in GitHub Pages and keep the matching
+`CNAME` file in this repository.
