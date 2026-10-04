@@ -14,6 +14,7 @@
   let height = 0;
 
   function resize() {
+    window.cancelAnimationFrame(animationFrame);
     const bounds = hero.getBoundingClientRect();
     const pixelRatio = Math.min(window.devicePixelRatio || 1, 2);
     width = bounds.width;
